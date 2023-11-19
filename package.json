@@ -1,0 +1,26 @@
+{
+  "name": "aocspike",
+  "version": "1.0.0",
+  "description": "spike using three js ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rlmark",
+  "license": "ISC",
+  "dependencies": {
+    "@pixi/filter-old-film": "^5.1.1",
+    "gsap": "^3.12.2",
+    "i": "^0.3.7",
+    "npm": "^10.2.3",
+    "pixi-filters": "^5.2.1",
+    "pixi-viewport": "^5.0.2",
+    "pixi.js": "^7.3.2",
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugin-gsap": "^1.0.4",
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0"
+  }
+}

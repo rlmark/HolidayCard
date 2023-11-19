@@ -1,0 +1,30 @@
+
+.container {
+  height: 800px;
+  scroll-snap-type: y mandatory;
+  outline: 2px solid lime;
+  position: relative;
+}
+
+.cloud {
+  scale: 0.7;
+  z-index: -1;
+  outline: 2px dotted red;
+}
+
+
+#cloud-1{
+  transform: translateY( 3000px);
+}
+#cloud-2{
+ transform: translateY(3000px);
+}
+#cloud-3{
+  transform: translateY(3000px);
+}
+#cloud-4{
+  transform: translateY(3000px);
+}
+#cloud-5{
+  transform: translateY(3000px);
+}
