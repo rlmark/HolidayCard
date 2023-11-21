@@ -1,30 +1,44 @@
 
+body {
+  background-color: rgb(31, 48, 78);
+}
 .container {
-  height: 800px;
-  scroll-snap-type: y mandatory;
+  height: 100vh;
   outline: 2px solid lime;
+  padding: 20px;
   position: relative;
+  overflow-x:hidden;
+  overflow-y: hidden;
 }
 
 .cloud {
   scale: 0.7;
-  z-index: -1;
+  /* z-index: -1; */
   outline: 2px dotted red;
+  position: absolute;
 }
-
 
 #cloud-1{
-  transform: translateY( 3000px);
+  transform: translate(-400px, -100px) ;
 }
 #cloud-2{
- transform: translateY(3000px);
+  transform: translate(200px, 650px);
 }
 #cloud-3{
-  transform: translateY(3000px);
+  transform: translate(300px, 300px);
 }
 #cloud-4{
-  transform: translateY(3000px);
+  transform: translate(450px, -100px);
 }
 #cloud-5{
-  transform: translateY(3000px);
+  transform: translate(-400px, 800px);
+}
+.sky{
+  height: 600px;
+  overflow-x: hidden;
+}
+.ground {
+  position: relative;
+  overflow-x: hidden;
+
 }
