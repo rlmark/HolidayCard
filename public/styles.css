@@ -1,34 +1,59 @@
 
 body {
+  background-image: url(/BackgroundNight.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   background-color: rgb(31, 48, 78);
+
 }
 .container {
   height: 100vh;
   outline: 2px solid lime;
   padding: 20px;
   position: relative;
-  overflow-x:hidden;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 
 .cloud {
-  scale: 0.7;
+  /* scale: 0.7; */
   /* z-index: -1; */
   outline: 2px dotted red;
   position: absolute;
 }
 
+#moon-1{
+  transform: translate(0, 0) ;
+  width: 100%;
+  height: auto;
+}
+#santa-1 {
+  transform: translate(0, 0) ;
+  width: 100%;
+  height: auto;
+}
 #cloud-1{
-  transform: translate(-400px, -100px) ;
+  transform: translate(-40, -20);
+  background-size: cover;
+
+  width: 100%;
+  height: auto;
 }
 #cloud-2{
-  transform: translate(200px, 650px);
+  transform: translate(-40, -30);
+  background-size: cover;
+
+  width: 100%;
+  height: auto;
 }
-#cloud-3{
-  transform: translate(300px, 300px);
+#aoc-heading{
+  top: 40vh;
+  left: 10vw
 }
 #cloud-4{
-  transform: translate(450px, -100px);
+  bottom: 20vh;
+  right: 10vw;
 }
 #cloud-5{
   transform: translate(-400px, 800px);
@@ -37,8 +62,29 @@ body {
   height: 600px;
   overflow-x: hidden;
 }
-.ground {
+.ground-container {
+  height: 100vh;
+  outline: 2px solid lime;
+  padding: 20px;
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
+}
+.ground {
+  /* scale: 0.7; */
+  /* z-index: -1; */
+  outline: 2px dotted red;
+  /* position: absolute; */
+}
+.right-back-tree {
+  width: auto;
+  position: absolute;
+  right: 0px;
+  top: -1080px;
+  border: purple 2px solid;
+}
 
+h1 {
+  color: #cae6e4;
+  font-size: 3rem;
 }
