@@ -5,19 +5,18 @@ import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Timeline);
 
-
 // this section works, kind of.
-gsap.timeline({
+let skyTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".container",
     // start: "bottom bottom ",
     start: "center center",
     end: "bottom top",
     ease: "ease-in",
-    // end: "+=2000",
+    // end: "+=7000",
     scrub: 3,
     pin: true,
-    markers: true,
+    // markers: true,
     stagger: 1.5,
   }
 })
@@ -26,12 +25,42 @@ gsap.timeline({
   .from("#cloud-2",  { y: innerHeight * 1.0 ,  x: 50})
   .from("#santa-1",  { y: innerHeight * 1.3, x: -innerWidth, duration: 4})
   .from("#aoc-heading", { y: innerHeight * 1.1, duration: 2})
-  .from("#cloud-4",  { y: innerHeight * 1.1})
+  .from("#aoc-heading-2",  { y: innerHeight * 1.1})
   .from("#cloud-5",  { y: innerHeight * 1.5 ,  x: -400 })
   .to({}, {duration: 2})
 
 
 
+const tmpGroundScroll = {
+  trigger: ".ground-container",
+  start:"center center",
+  end: "bottom top",
+  ease: "ease-in",
+  scrub: 2,
+  pin: true,
+  markers: true,
+}
+// Start's first value represents the part of the trigger which
+// will initiate the animation once it meets the second value,
+// the second value is the location in the viewport
+// const groundElems = gsap.utils.toArray('.ground');
+// groundElems.forEach(box => {
+//   gsap.to(box, {
+//     x: 300,
+//     y: innerHeight * 0.2,
+//     scrollTrigger: {
+//       trigger: box,
+//       scrub: true,
+//       pin: true,
+//     }
+//   })
+// });
+let groundTL = gsap.timeline({ scrollTrigger: tmpGroundScroll })
+groundTL
+  .from(".left-back-tree", {y: innerHeight * 0.2, x: innerWidth * 0.15, })
+  .from(".right-back-tree", { y: innerHeight * 0.2, x: -innerWidth * 0.15, }, '<')
+  .from(".left-front-tree", {y: innerHeight * 0.3}, 0.1)
+  .from(".right-front-tree", {y: innerHeight * 0.3}, '<')
 
 // gsap.to("#cloud-1", {
 //   y: -200,

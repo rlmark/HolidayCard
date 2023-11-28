@@ -5,21 +5,17 @@ body {
   background-size: cover;
   background-position: center center;
   background-color: rgb(31, 48, 78);
-
 }
 .container {
   height: 100vh;
   outline: 2px solid lime;
-  padding: 20px;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
 .cloud {
-  /* scale: 0.7; */
   /* z-index: -1; */
-  outline: 2px dotted red;
   position: absolute;
 }
 
@@ -34,54 +30,61 @@ body {
   height: auto;
 }
 #cloud-1{
-  transform: translate(-40, -20);
+  transform: translate(-50, -20);
   background-size: cover;
 
   width: 100%;
   height: auto;
 }
 #cloud-2{
-  transform: translate(-40, -30);
+  transform: translate(-50, -30);
   background-size: cover;
 
   width: 100%;
   height: auto;
+
 }
 #aoc-heading{
-  top: 40vh;
+  bottom: 40vh;
   left: 10vw
 }
-#cloud-4{
+#aoc-heading-2{
   bottom: 20vh;
   right: 10vw;
 }
 #cloud-5{
   transform: translate(-400px, 800px);
 }
-.sky{
-  height: 600px;
-  overflow-x: hidden;
-}
+
 .ground-container {
-  height: 100vh;
-  outline: 2px solid lime;
   padding: 20px;
+  height: 100vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
+  outline: 2px solid hotpink;
 }
 .ground {
-  /* scale: 0.7; */
   /* z-index: -1; */
-  outline: 2px dotted red;
-  /* position: absolute; */
-}
-.right-back-tree {
-  width: auto;
+  height: 100%;
   position: absolute;
   right: 0px;
-  top: -1080px;
-  border: purple 2px solid;
+  bottom: 0px;
+}
+.background-mtns {
+  width: 100%;
+}
+.right-back-tree {
+  float:right;
+}
+.left-back-tree {
+  left: 0px;
+}
+.right-front-tree {
+  float: right;
+}
+.left-front-tree {
+  left : 0px;
 }
 
 h1 {
