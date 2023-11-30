@@ -5,30 +5,13 @@ import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Timeline);
 
-window.onload = function(e) {
-  let lowerCloud = document.querySelector("#cloud-2");
-  let cloudHeight = lowerCloud.offsetHeight;
-
-  let skyViewport = document.querySelector(".container");
-  let skyHeight = skyViewport.offsetHeight;
-  console.log(cloudHeight);
-  console.log(skyHeight);
-  if (cloudHeight > skyHeight) {
-
-    skyViewport.offsetHeight = cloudHeight;
-  }
-
-
-};
-
 let skyTL = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container",
-    // start: "bottom bottom ",
+    trigger: ".cloud-container",
     start: "center center",
-    end: "bottom top",
+    // end: "bottom top",
     ease: "ease-in",
-    // end: "+=7000",
+    end: "+=5000",
     scrub: 3,
     pin: true,
     // markers: true,
@@ -97,11 +80,11 @@ const groundScroll = {
 // });
 let groundTL = gsap.timeline({ scrollTrigger: groundScroll })
 groundTL
-  .from(".left-back-tree", {y: innerHeight * 0.2, x: 50, })
-  .from(".right-back-tree", { y: innerHeight * 0.2, x: -50, }, '<')
-  .from(".left-front-tree", {y: innerHeight * 0.3}, 0.1)
+  .from(".left-front-tree", {y: innerHeight * 0.3})
   .from(".right-front-tree", {y: innerHeight * 0.3}, '<')
-  .from(".left-back-tree2", {y: innerHeight * 0.2, x: 80}, 0.1)
+  .from(".left-back-tree", {y: innerHeight * 0.2, x: 50, }, 0.1)
+  .from(".right-back-tree", { y: innerHeight * 0.2, x: -50, }, '<')
+  .from(".left-back-tree2", {y: innerHeight * 0.2, x: 80}, 0.2)
   .from(".right-back-tree2", {y: innerHeight * 0.2, x : -80}, '<')
   .from(".mtns", {y: innerHeight * 0.3}, 0.1)
   .from(".dk-bkground", {y: innerHeight * 0.3}, 0.2)

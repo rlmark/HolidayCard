@@ -11,7 +11,10 @@ body {
   padding-bottom: 30px;
   text-align: center;
 }
-.container {
+
+/* cloud container section */
+
+.cloud-container {
   height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -54,6 +57,25 @@ body {
   transform: translate(-400px, 800px);
 }
 
+/* sky container section */
+
+.sky-container section {
+  background-color : #401c59;
+  height: 500px;
+  width: 800px;
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 1em 3em;
+}
+
+.sky-container p {
+  font-family: 'Corben', serif;
+  color: #cae6e4;
+  text-align: left;
+}
+
+/* Ground forest section */
 .ground-container {
   padding: 20px;
   height: 150vh;
@@ -79,16 +101,17 @@ body {
 .main-tree {
   width: auto;
   margin: auto;
-  left: 0;
-  right: 0;
-
-  /* background-size: cover; */
+  left:-500%;
+  right:-500%;
+  background-size: cover;
 }
 .left-foreground {
+  /* left: -5%; */
   left: 0px;
 }
 .right-foreground {
   float: right;
+  /* right: -15%; */
 }
 
 h1 {
@@ -96,6 +119,7 @@ h1 {
   font-size: 3em;
   font-family: 'Corben', serif;
   font-weight: normal;
+  text-shadow: 0 0 7px black;
 }
 h1::first-letter {
   font-size: 5rem;
