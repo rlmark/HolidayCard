@@ -52,7 +52,6 @@ const groundScroll = {
   ease: "ease-in",
   scrub: 2,
   pin: true,
-  markers: true,
   onToggle: ( self ) => {
     if (self.progress === 1) {
       console.log("animation start");
