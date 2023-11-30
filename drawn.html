@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Corben">
     <link rel="stylesheet" type="text/css" href="/styles.css" />
 		<meta charset="utf-8">
 		<title>Scrolly</title>
 	</head>
 	<body>
+    <div class="initial">
+      <h1>Hello...</h1>
+    </div>
     <div class="container">
       <section class="cloud" >
         <img src="/Moon1080.png" id="moon-1" alt="Moon">
       </section>
-      <section  class="cloud" >
-        <img src="/CloudUpper1080.png" id="cloud-1" alt="Cloud">
-      </section>
-      <section class="cloud">
-        <img src="/CloudLower1080.png"  id="cloud-2" alt="Cloud">
-      </section>
+
+      <img src="/CloudUpper1080.png" id="cloud-1" class="cloud" alt="Cloud">
+      <img src="/CloudLower1080.png"  id="cloud-2" class="cloud" alt="Cloud">
+
       <section class="cloud">
         <img src="/Santa1080.png" id="santa-1" alt="Santa and sleigh">
       </section>
@@ -28,16 +31,18 @@
     </div>
 
     <div class="ground-container">
-      <!-- <img src="/BackgroundMtns.png" alt="Mountains background" class="ground background-mtns">
-      <img src="/BackgroundDk.png" alt="Dark ground" class="ground background-mtns">
-      <img src="/BackgroundLt.png" alt="Light ground" class="ground background-mtns"> -->
-      <img src="/RightBackTree2160.png" alt="Right tree background" class="ground right-back-tree trees">
-      <div class="tmp">
-        <img src="/LeftBackTree2160.png" alt="Left tree background" class="ground left-back-tree trees">
-
-      </div>
-      <img src="/LeftFrontTree2160.png" alt="Tree on left side of screen" class="ground left-front-tree trees">
-      <img src="/RightFrontTree2160.png" alt="Tree on right side of screen" class="ground right-front-tree trees">
+      <img src="/BackgroundMtns2160.png" alt="Mountains background" class="ground background mtns">
+      <img src="/DarkBackground2160.png" alt="Dark ground" class="ground background dk-bkground">
+      <img src="/LightBkgrd2160.png" alt="Light ground" class="ground background lt-bkground">
+      <img src="/LeftBackTree2-2160.png" alt="Left background dark tree" class="ground left-back-tree2 left-trees">
+      <img src="/RightBackTree2-2160.png" alt="Right background dark tree" class="ground right-back-tree2 right-trees">
+      <img src="/RightBackTree2160.png" alt="Right tree background" class="ground right-back-tree right-trees">
+      <img src="/LeftBackTree2160.png" alt="Left tree background" class="ground left-back-tree left-trees">
+      <img src="/LeftFrontTree2160.png" alt="Tree on left side of screen" class="ground left-front-tree left-trees">
+      <img src="/RightFrontTree2160.png" alt="Tree on right side of screen" class="ground right-front-tree right-trees">
+      <img src="/MainTreeStar2160.png" alt="Main holiday tree" class="ground main-tree">
+      <img src="/ForegroundLeft2160.png" alt="Left foreground bush" class="ground left-foreground">
+      <img src="/ForegroundRight2160.png" alt="Right foreground bush" class="ground right-foreground">
     </div>
     <script type="module" src="drawn.js">
     </script>

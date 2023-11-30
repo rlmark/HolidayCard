@@ -5,7 +5,22 @@ import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Timeline);
 
-// this section works, kind of.
+window.onload = function(e) {
+  let lowerCloud = document.querySelector("#cloud-2");
+  let cloudHeight = lowerCloud.offsetHeight;
+
+  let skyViewport = document.querySelector(".container");
+  let skyHeight = skyViewport.offsetHeight;
+  console.log(cloudHeight);
+  console.log(skyHeight);
+  if (cloudHeight > skyHeight) {
+
+    skyViewport.offsetHeight = cloudHeight;
+  }
+
+
+};
+
 let skyTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".container",
@@ -20,6 +35,7 @@ let skyTL = gsap.timeline({
     stagger: 1.5,
   }
 })
+skyTL
   .from("#moon-1",  { y: innerHeight * 1.2, x: innerWidth * 0.2})
   .from("#cloud-1",  { y: innerHeight * 1.1, x: innerWidth * 0.3 })
   .from("#cloud-2",  { y: innerHeight * 1.0 ,  x: 50})
@@ -29,9 +45,7 @@ let skyTL = gsap.timeline({
   .from("#cloud-5",  { y: innerHeight * 1.5 ,  x: -400 })
   .to({}, {duration: 2})
 
-
-
-const tmpGroundScroll = {
+const groundScroll = {
   trigger: ".ground-container",
   start:"center center",
   end: "bottom top",
@@ -39,7 +53,34 @@ const tmpGroundScroll = {
   scrub: 2,
   pin: true,
   markers: true,
+  onToggle: ( self ) => {
+    if (self.progress === 1) {
+      console.log("animation start");
+      gsap.fromTo(".left-foreground", {
+        x: 5,
+        yoyo: true,
+        repeat: -1,
+        duration: 2},
+        {
+          x: -5,
+          yoyo: true,
+          repeat: -1,
+          duration: 2.1
+        });
+      gsap.fromTo(".right-foreground", {
+        x: -5,
+        yoyo: true,
+        repeat: -1,
+        duration: 2},{
+        x: 5,
+        yoyo: true,
+        repeat: -1,
+        duration: 2
+        });
+      }
+  }
 }
+
 // Start's first value represents the part of the trigger which
 // will initiate the animation once it meets the second value,
 // the second value is the location in the viewport
@@ -55,14 +96,22 @@ const tmpGroundScroll = {
 //     }
 //   })
 // });
-let groundTL = gsap.timeline({ scrollTrigger: tmpGroundScroll })
+let groundTL = gsap.timeline({ scrollTrigger: groundScroll })
 groundTL
-  .from(".left-back-tree", {y: innerHeight * 0.2, x: innerWidth * 0.15, })
-  .from(".right-back-tree", { y: innerHeight * 0.2, x: -innerWidth * 0.15, }, '<')
+  .from(".left-back-tree", {y: innerHeight * 0.2, x: 50, })
+  .from(".right-back-tree", { y: innerHeight * 0.2, x: -50, }, '<')
   .from(".left-front-tree", {y: innerHeight * 0.3}, 0.1)
   .from(".right-front-tree", {y: innerHeight * 0.3}, '<')
+  .from(".left-back-tree2", {y: innerHeight * 0.2, x: 80}, 0.1)
+  .from(".right-back-tree2", {y: innerHeight * 0.2, x : -80}, '<')
+  .from(".mtns", {y: innerHeight * 0.3}, 0.1)
+  .from(".dk-bkground", {y: innerHeight * 0.3}, 0.2)
+  .from(".lt-bkground", {y: innerHeight * 0.3}, "<")
+  .from(".left-foreground", {y: innerHeight * 0.2}, 0.1)
+  .from(".right-foreground", {y: innerHeight * 0.2}, "<")
+  .from(".main-tree", {y: innerHeight * 0.75}, 0.5)
 
-// gsap.to("#cloud-1", {
+//
 //   y: -200,
 //   x: -400,
 //   ease: "ease-in",

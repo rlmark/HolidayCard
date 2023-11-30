@@ -6,19 +6,20 @@ body {
   background-position: center center;
   background-color: rgb(31, 48, 78);
 }
+.initial h1 {
+  padding-top: 100px;
+  padding-bottom: 30px;
+  text-align: center;
+}
 .container {
   height: 100vh;
-  outline: 2px solid lime;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-
 .cloud {
-  /* z-index: -1; */
   position: absolute;
 }
-
 #moon-1{
   transform: translate(0, 0) ;
   width: 100%;
@@ -30,19 +31,16 @@ body {
   height: auto;
 }
 #cloud-1{
-  transform: translate(-50, -20);
   background-size: cover;
 
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 #cloud-2{
-  transform: translate(-50, -30);
   background-size: cover;
-
-  width: 100%;
-  height: auto;
-
+  width: auto;
+  height: 100%;
+  right: 0px;
 }
 #aoc-heading{
   bottom: 40vh;
@@ -58,36 +56,50 @@ body {
 
 .ground-container {
   padding: 20px;
-  height: 100vh;
+  height: 150vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  outline: 2px solid hotpink;
 }
 .ground {
-  /* z-index: -1; */
   height: 100%;
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-.background-mtns {
+.background {
   width: 100%;
 }
-.right-back-tree {
-  float:right;
-}
-.left-back-tree {
+.left-trees {
   left: 0px;
 }
-.right-front-tree {
+.right-trees {
   float: right;
 }
-.left-front-tree {
-  left : 0px;
+.main-tree {
+  width: auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+  /* background-size: cover; */
+}
+.left-foreground {
+  left: 0px;
+}
+.right-foreground {
+  float: right;
 }
 
 h1 {
   color: #cae6e4;
-  font-size: 3rem;
+  font-size: 3em;
+  font-family: 'Corben', serif;
+  font-weight: normal;
 }
+h1::first-letter {
+  font-size: 5rem;
+  font-family: 'Rye', serif;
+  color: #bf9d52;
+}
+
