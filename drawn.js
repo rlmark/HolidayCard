@@ -9,9 +9,9 @@ let skyTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".cloud-container",
     start: "center center",
-    // end: "bottom top",
+    end: "bottom top",
     ease: "ease-in",
-    end: "+=5000",
+    // end: "+=5000",
     scrub: 3,
     pin: true,
     // markers: true,
@@ -87,8 +87,7 @@ groundTL
   .from(".left-back-tree2", {y: innerHeight * 0.2, x: 80}, 0.2)
   .from(".right-back-tree2", {y: innerHeight * 0.2, x : -80}, '<')
   .from(".mtns", {y: innerHeight * 0.3}, 0.1)
-  .from(".dk-bkground", {y: innerHeight * 0.3}, 0.2)
-  .from(".lt-bkground", {y: innerHeight * 0.3}, "<")
+  .from(".lt-bkground", {y: innerHeight * 0.3}, 0.2)
   .from(".left-foreground", {y: innerHeight * 0.2}, 0.1)
   .from(".right-foreground", {y: innerHeight * 0.2}, "<")
   .from(".main-tree", {y: innerHeight * 0.75}, 0.5)

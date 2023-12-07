@@ -1,4 +1,4 @@
-# Advent of Code invite experiments
+# Holiday card + Cloud invite experiments
 
 In the project directory, use `npx vite` to start a local server.
 
