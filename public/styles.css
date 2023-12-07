@@ -106,6 +106,16 @@ body {
   right:-500%;
   background-size: cover;
 }
+
+
+.present {
+  width: auto;
+  margin: auto;
+  left:-500%;
+  right:-500%;
+  background-size: cover;
+}
+
 .left-foreground {
   /* left: -5%; */
   left: 0px;
