@@ -13,7 +13,10 @@ body {
 }
 
 /* cloud container section */
-
+#stars-top {
+  background-size: cover;
+  width: 100%;
+}
 .cloud-container {
   height: 100vh;
   position: relative;
@@ -77,6 +80,12 @@ body {
 
 /* ground forest section */
 
+#stars-bottom {
+  background-size: cover;
+  width: 100%;
+  height : auto;
+}
+
 .ground-container {
   padding: 20px;
   height: 150vh;
@@ -95,9 +104,11 @@ body {
 }
 .left-trees {
   left: 0px;
+  will-change: transform;
 }
 .right-trees {
   float: right;
+  will-change: transform;
 }
 .main-tree {
   width: auto;
@@ -107,13 +118,18 @@ body {
   background-size: cover;
 }
 
-
 .present {
   width: auto;
   margin: auto;
   left:-500%;
   right:-500%;
   background-size: cover;
+}
+
+
+.preset-primary:hover {
+  opacity:1;
+  outline: 4px red solid;
 }
 
 .left-foreground {

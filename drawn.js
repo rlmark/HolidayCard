@@ -31,36 +31,40 @@ skyTL
 const groundScroll = {
   trigger: ".ground-container",
   start:"center center",
-  end: "bottom top",
+  end: "bottom bottom",
+  normalizeScroll: true,
   ease: "ease-in",
-  scrub: 2,
-  pin: true,
-  onToggle: ( self ) => {
-    if (self.progress === 1) {
-      console.log("animation start");
-      gsap.fromTo(".left-foreground", {
-        x: 5,
-        yoyo: true,
-        repeat: -1,
-        duration: 2},
-        {
-          x: -5,
-          yoyo: true,
-          repeat: -1,
-          duration: 2.1
-        });
-      gsap.fromTo(".right-foreground", {
-        x: -5,
-        yoyo: true,
-        repeat: -1,
-        duration: 2},{
-        x: 5,
-        yoyo: true,
-        repeat: -1,
-        duration: 2
-        });
-      }
-  }
+  scrub: 3,
+  anticipatePin: 1,
+  // pin: true,
+  pinType: "fixed",
+  // onToggle: ( self ) => {
+  //   if (self.progress === 1) {
+  //     console.log("animation start");
+  //     gsap.fromTo(".left-foreground", {
+  //       x: 5,
+  //       yoyo: true,
+  //       repeat: -1,
+  //       duration: 2},
+  //       {
+  //         x: -5,
+  //         yoyo: true,
+  //         repeat: -1,
+  //         duration: 2.1
+  //       });
+  //     gsap.fromTo(".right-foreground", {
+  //       x: -5,
+  //       yoyo: true,
+  //       repeat: -1,
+  //       duration: 2},{
+  //       x: 5,
+  //       yoyo: true,
+  //       repeat: -1,
+  //       duration: 2
+  //       });
+  //     // primaryPresentAnim;
+  //     }
+  // }
 }
 
 // Start's first value represents the part of the trigger which
@@ -80,7 +84,8 @@ const groundScroll = {
 // });
 let groundTL = gsap.timeline({ scrollTrigger: groundScroll })
 groundTL
-  .from(".left-front-tree", {y: innerHeight * 0.3})
+  .from(".stars", {y: innerHeight * 0.2})
+  .from(".left-front-tree", {y: innerHeight * 0.3},0.1)
   .from(".right-front-tree", {y: innerHeight * 0.3}, '<')
   .from(".left-back-tree", {y: innerHeight * 0.2, x: 50, }, 0.1)
   .from(".right-back-tree", { y: innerHeight * 0.2, x: -50, }, '<')
@@ -90,7 +95,20 @@ groundTL
   .from(".lt-bkground", {y: innerHeight * 0.3}, 0.2)
   .from(".left-foreground", {y: innerHeight * 0.2}, 0.1)
   .from(".right-foreground", {y: innerHeight * 0.2}, "<")
-  .from(".main-tree", {y: innerHeight * 0.75}, 0.5)
+  .from(".main-tree", {y: innerHeight * 0.85}, 0.5)
+  .from(".present-back", {y: innerHeight * 0.25}, 2)
+  .from(".present-primary", {y: innerHeight * 0.5}, "<")
+
+// todo
+let primaryPresentAnim = gsap.to(".present-primary", {
+    repeat: 6,
+    duration: 1,
+    ease: "bounce.out",
+    yoyo: true,
+    rotate: 2,
+    transformOrigin: "60% 90%",
+    scale : 0.95,
+  });
 
 //
 //   y: -200,
