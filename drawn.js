@@ -11,7 +11,6 @@ let skyTL = gsap.timeline({
     start: "center center",
     end: "bottom top",
     ease: "ease-in",
-    // end: "+=5000",
     scrub: 3,
     pin: true,
     // markers: true,
@@ -89,27 +88,41 @@ groundTL
   .from(".right-front-tree", {y: innerHeight * 0.3}, '<')
   .from(".left-back-tree", {y: innerHeight * 0.2, x: 50, }, 0.1)
   .from(".right-back-tree", { y: innerHeight * 0.2, x: -50, }, '<')
-  .from(".left-back-tree2", {y: innerHeight * 0.2, x: 80}, 0.2)
-  .from(".right-back-tree2", {y: innerHeight * 0.2, x : -80}, '<')
+  .from(".left-back-tree2", {y: innerHeight * 0.2, x: 150}, 0.2)
+  .from(".right-back-tree2", {y: innerHeight * 0.2, x : -150}, '<')
   .from(".mtns", {y: innerHeight * 0.3}, 0.1)
   .from(".lt-bkground", {y: innerHeight * 0.3}, 0.2)
   .from(".left-foreground", {y: innerHeight * 0.2}, 0.1)
   .from(".right-foreground", {y: innerHeight * 0.2}, "<")
-  .from(".main-tree", {y: innerHeight * 0.85}, 0.5)
   .from(".present-back", {y: innerHeight * 0.25}, 2)
   .from(".present-primary", {y: innerHeight * 0.5}, "<")
 
-// todo
-let primaryPresentAnim = gsap.to(".present-primary", {
-    repeat: 6,
-    duration: 1,
-    ease: "bounce.out",
-    yoyo: true,
-    rotate: 2,
-    transformOrigin: "60% 90%",
-    scale : 0.95,
-  });
+let slowScroll = {
+  trigger: ".ground-container",
+  start: "-=500",
+  end: "bottom bottom",
+  normalizeScroll: true,
+  ease: "ease-in",
+  scrub: 3,
+  anticipatePin: 1,
+}
 
+let slowTL = gsap.timeline({ scrollTrigger: slowScroll })
+slowTL
+  .fromTo(".comet", {y: -300, x: innerWidth * 1.1},{y: innerHeight * 0.8, x: -800})
+  .from(".main-tree", {y: innerHeight * 0.85}, 0.5)
+
+// let primaryPresentAnim = () => gsap.to(".present-primary", {
+//     repeat: 10,
+//     duration: 1,
+//     ease: "bounce.out",
+//     yoyo: true,
+//     rotate: 2,
+//     transformOrigin: "60% 90%",
+//     scale : 0.95,
+//   });
+
+// primaryPresentAnim();
 //
 //   y: -200,
 //   x: -400,

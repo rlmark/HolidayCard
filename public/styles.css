@@ -80,6 +80,11 @@ body {
 
 /* ground forest section */
 
+.comet {
+  width: 100%;
+  height: auto;
+}
+
 #stars-bottom {
   background-size: cover;
   width: 100%;
