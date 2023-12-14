@@ -24,7 +24,6 @@ skyTL
   .from("#santa-1",  { y: innerHeight * 1.3, x: -innerWidth, duration: 4})
   .from("#aoc-heading", { y: innerHeight * 1.1, duration: 2})
   .from("#aoc-heading-2",  { y: innerHeight * 1.1})
-  .from("#cloud-5",  { y: innerHeight * 1.5 ,  x: -400 })
   .to({}, {duration: 2})
 
 const groundScroll = {
@@ -37,50 +36,11 @@ const groundScroll = {
   anticipatePin: 1,
   // pin: true,
   pinType: "fixed",
-  // onToggle: ( self ) => {
-  //   if (self.progress === 1) {
-  //     console.log("animation start");
-  //     gsap.fromTo(".left-foreground", {
-  //       x: 5,
-  //       yoyo: true,
-  //       repeat: -1,
-  //       duration: 2},
-  //       {
-  //         x: -5,
-  //         yoyo: true,
-  //         repeat: -1,
-  //         duration: 2.1
-  //       });
-  //     gsap.fromTo(".right-foreground", {
-  //       x: -5,
-  //       yoyo: true,
-  //       repeat: -1,
-  //       duration: 2},{
-  //       x: 5,
-  //       yoyo: true,
-  //       repeat: -1,
-  //       duration: 2
-  //       });
-  //     // primaryPresentAnim;
-  //     }
-  // }
 }
 
 // Start's first value represents the part of the trigger which
 // will initiate the animation once it meets the second value,
 // the second value is the location in the viewport
-// const groundElems = gsap.utils.toArray('.ground');
-// groundElems.forEach(box => {
-//   gsap.to(box, {
-//     x: 300,
-//     y: innerHeight * 0.2,
-//     scrollTrigger: {
-//       trigger: box,
-//       scrub: true,
-//       pin: true,
-//     }
-//   })
-// });
 let groundTL = gsap.timeline({ scrollTrigger: groundScroll })
 groundTL
   .from(".stars", {y: innerHeight * 0.2})
@@ -112,84 +72,90 @@ slowTL
   .fromTo(".comet", {y: -300, x: innerWidth * 1.1},{y: innerHeight * 0.8, x: -800})
   .from(".main-tree", {y: innerHeight * 0.85}, 0.5)
 
-// let primaryPresentAnim = () => gsap.to(".present-primary", {
-//     repeat: 10,
-//     duration: 1,
-//     ease: "bounce.out",
-//     yoyo: true,
-//     rotate: 2,
-//     transformOrigin: "60% 90%",
-//     scale : 0.95,
-//   });
+  let primaryPresentWiggle = gsap.to(".present-primary", {
+    repeat: -1,
+    duration: 2,
+    ease: "bounce.out",
+    yoyo: true,
+    rotate: 2,
+    transformOrigin: "60% 90%",
+    scale : 0.95,
+  });
+let leftForegroundAnim =
+  gsap.fromTo(".left-foreground", {
+    x: 5,
+    yoyo: true,
+    repeat: -1,
+    duration: 2},
+    {
+      x: -5,
+      yoyo: true,
+      repeat: -1,
+      duration: 2.1
+    });
+let rightForegroundAnim = gsap.fromTo(".right-foreground", {
+    x: -5,
+    yoyo: true,
+    repeat: -1,
+    duration: 2},{
+    x: 5,
+    yoyo: true,
+    repeat: -1,
+    duration: 2
+    });
+let lights = gsap.utils.toArray('.lights');
+lights.forEach(light => {
+  gsap.to(light, {
+    opacity: 1,
+    duration: gsap.utils.random(1, 4),
+    repeat: -1,
+    yoyo: true,
+  })
+});
 
-// primaryPresentAnim();
-//
-//   y: -200,
-//   x: -400,
-//   ease: "ease-in",
-//   scrollTrigger: {
-//     trigger: ".container",
-//     start: () => 'top top',
-//     scrub: true,
-//     markers: true,
-//     end: () => "bottom bottom",
-//     anticipatePin: 1,
-//     onLeave: () => console.log(" cloud 1 leave"),
-//     onEnter: () => console.log(" cloud 1 enter"),
-//     onEnterBack: () => console.log(" cloud 1 enter back"),
-//     markers: true,
-//     pin: true,
-//   }
-// })
+const primaryPresent = document.querySelector(".present-primary");
+let present = gsap.to(".present-primary", {
+  duration: 1,
+  ease: "ease-in",
+  rotate: 4,
+  transformOrigin: "60% 90%",
+  scale : 1.55,
+}).reverse();
 
-// gsap.to("#cloud-2", {
-//   y: -300,
-//   x: 100,
-//   ease: "ease-in",
-//   scrollTrigger: {
-//     trigger: ".container",
-//     start: () => 'top top',
-//     markers: true,
-//     scrub: true,
-//     anticipatePin: 1,
-//     pin: true,
-//     end:() => "bottom bottom",
-//     onLeave: () => console.log(" cloud 2 leave"),
-//     onEnter: () => console.log(" cloud 2 enter"),
-//     onEnterBack: () => console.log(" cloud 2 enter back"),
-//   }
-// })
-// gsap.to("#cloud-3", {
-//   y: -180,
-//   x: -20,
-//   ease: "ease-in",
-//   duration: 3,
-//   scrollTrigger: {
-//     trigger: ".container",
-//     start: 'top top',
-//     pin: true,
-//     scrub: 0.5,
-//     anticipatePin: 1,
-//     end: "+=680",
-//   }
-// })
-// gsap.to("#cloud-4", {
-//   y: -250,
-//   ease: "ease-in",
-//   x: 10,
-//   scrollTrigger: {
-//     trigger: ".container",
-//     start: 'top center',
-//     scrub: true
-//   }
-// })
-// gsap.to("#cloud-5", {
-//   y: -475,
-//   ease: "ease-in",
-//   x: 25,
-//   scrollTrigger: {
-//     trigger: ".container",
-//     start: 'top center',
-//     markers: true,
-//   }
-// })
+let card = gsap.to(".card-container", {
+  duration: 1,
+  delay: 1,
+  ease: "ease-in",
+  opacity: 1,
+}).reverse();
+
+function pauseAnimations () {
+  primaryPresentWiggle.pause();
+  leftForegroundAnim.pause();
+  rightForegroundAnim.pause();
+
+}
+function resumeAnimations () {
+  primaryPresentWiggle.resume(true);
+  leftForegroundAnim.resume(true);
+  rightForegroundAnim.resume(true);
+  card.reverse();
+  present.reverse();
+}
+
+ScrollTrigger.addEventListener("scrollStart", () => pauseAnimations() );
+ScrollTrigger.addEventListener( "scrollEnd", () => resumeAnimations() );
+
+
+primaryPresent.addEventListener("click", function(e) {
+  pauseAnimations();
+  if (present.reversed() && card.reversed()) {
+    present.play();
+    card.play();
+  } else {
+    present.reverse();
+    card.reverse();
+    resumeAnimations();
+  }
+
+});

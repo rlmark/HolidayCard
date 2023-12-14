@@ -115,6 +115,10 @@ body {
   float: right;
   will-change: transform;
 }
+
+
+/* tree styling */
+
 .main-tree {
   width: auto;
   margin: auto;
@@ -122,7 +126,11 @@ body {
   right:-500%;
   background-size: cover;
 }
+.lights {
+  opacity: 0;
+}
 
+/* PRESENTS - NOT RESPONSIVE YET - HALP */
 .present {
   width: auto;
   margin: auto;
@@ -131,10 +139,74 @@ body {
   background-size: cover;
 }
 
+.primary-present-container{
+  position: relative;
+  width: 20%;
+  max-width: 400px;
+  margin-left: 45%;
+  height: auto;
+  bottom: 0;
+  height: 150vh;
+  /* background-color: red; */
+  /* opacity: 0.5; */
+}
+.position-present {
+  /* padding-left: 120px; */
+  position: absolute;
+  display: block;
+  margin-bottom: clamp(30px, 9%, 70px);
+  width: clamp(150px, 100%, 380px);
+  height: auto;
+  /* background-color: orange; */
+}
+.present-primary{
+  height: auto;
+  /* bottom: 60px; */
+  z-index: 100;
+  background-size: cover;
+}
+.present-primary:hover
+{
+  cursor: pointer;
+}
 
-.preset-primary:hover {
-  opacity:1;
-  outline: 4px red solid;
+/* card section */
+.card-container {
+  position: fixed;
+  bottom: 100px;
+  width: 55%;
+  height: 80vh;
+  margin: auto;
+  opacity: 0;
+
+}
+
+.card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.card-text-container {
+  position: absolute;
+  z-index: 102;
+  padding: 50px 150px;
+}
+h1.card-text::first-letter {
+  font-size: 5rem;
+  font-family: 'Rye', serif;
+  color: #86244d;
+}
+h1.card-text{
+  font-family: 'Corben', serif;
+  font-weight: normal;
+  color: rgb(42, 63, 101);
+  text-shadow: 0 0 0;
+
+}
+h2.card-text {
+  font-family: 'Corben', serif;
+  font-weight: normal;
+  color:rgb(42, 63, 101);
 }
 
 .left-foreground {
@@ -158,4 +230,5 @@ h1::first-letter {
   font-family: 'Rye', serif;
   color: #bf9d52;
 }
+
 
