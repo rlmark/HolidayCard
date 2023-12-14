@@ -5,6 +5,8 @@ import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Timeline);
 
+// ~*~*~*~*~*~*~*~ SKY ELEMENTS SCROLL TIMELINE ~*~*~*~*~*~*~*~
+
 let skyTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".cloud-container",
@@ -26,6 +28,8 @@ skyTL
   .from("#aoc-heading-2",  { y: innerHeight * 1.1})
   .to({}, {duration: 2})
 
+// ~*~*~*~*~*~*~*~ GROUND ELEMENTS SCROLL TIMELINE ~*~*~*~*~*~*~*~
+
 const groundScroll = {
   trigger: ".ground-container",
   start:"center center",
@@ -37,10 +41,6 @@ const groundScroll = {
   // pin: true,
   pinType: "fixed",
 }
-
-// Start's first value represents the part of the trigger which
-// will initiate the animation once it meets the second value,
-// the second value is the location in the viewport
 let groundTL = gsap.timeline({ scrollTrigger: groundScroll })
 groundTL
   .from(".stars", {y: innerHeight * 0.2})
@@ -57,6 +57,8 @@ groundTL
   .from(".present-back", {y: innerHeight * 0.25}, 2)
   .from(".present-primary", {y: innerHeight * 0.5}, "<")
 
+// ~*~*~*~*~*~*~*~ SLOWER SCROLL TIMELINE ~*~*~*~*~*~*~*~
+
 let slowScroll = {
   trigger: ".ground-container",
   start: "-=500",
@@ -66,13 +68,14 @@ let slowScroll = {
   scrub: 3,
   anticipatePin: 1,
 }
-
 let slowTL = gsap.timeline({ scrollTrigger: slowScroll })
 slowTL
   .fromTo(".comet", {y: -300, x: innerWidth * 1.1},{y: innerHeight * 0.8, x: -800})
   .from(".main-tree", {y: innerHeight * 0.85}, 0.5)
 
-  let primaryPresentWiggle = gsap.to(".present-primary", {
+// ~*~*~*~*~*~*~*~ NON SCROLL ANIMATIONS ~*~*~*~*~*~*~*~
+
+let primaryPresentWiggle = gsap.to(".present-primary", {
     repeat: -1,
     duration: 2,
     ease: "bounce.out",
@@ -81,8 +84,7 @@ slowTL
     transformOrigin: "60% 90%",
     scale : 0.95,
   });
-let leftForegroundAnim =
-  gsap.fromTo(".left-foreground", {
+let leftForegroundAnim = gsap.fromTo(".left-foreground", {
     x: 5,
     yoyo: true,
     repeat: -1,
@@ -112,8 +114,6 @@ lights.forEach(light => {
     yoyo: true,
   })
 });
-
-const primaryPresent = document.querySelector(".present-primary");
 let present = gsap.to(".present-primary", {
   duration: 1,
   ease: "ease-in",
@@ -121,7 +121,6 @@ let present = gsap.to(".present-primary", {
   transformOrigin: "60% 90%",
   scale : 1.55,
 }).reverse();
-
 let card = gsap.to(".card-container", {
   duration: 1,
   delay: 1,
@@ -129,11 +128,12 @@ let card = gsap.to(".card-container", {
   opacity: 1,
 }).reverse();
 
+//  ~*~*~*~*~*~*~*~ SCROLL EVENT LISTENERS ~*~*~*~*~*~*~*~
+
 function pauseAnimations () {
   primaryPresentWiggle.pause();
   leftForegroundAnim.pause();
   rightForegroundAnim.pause();
-
 }
 function resumeAnimations () {
   primaryPresentWiggle.resume(true);
@@ -142,11 +142,12 @@ function resumeAnimations () {
   card.reverse();
   present.reverse();
 }
-
 ScrollTrigger.addEventListener("scrollStart", () => pauseAnimations() );
 ScrollTrigger.addEventListener( "scrollEnd", () => resumeAnimations() );
 
+// ~*~*~*~*~*~*~*~ CLICK ANIMATIONS ~*~*~*~*~*~*~*~
 
+const primaryPresent = document.querySelector(".present-primary");
 primaryPresent.addEventListener("click", function(e) {
   pauseAnimations();
   if (present.reversed() && card.reversed()) {
