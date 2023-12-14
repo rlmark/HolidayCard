@@ -139,7 +139,7 @@ body {
   background-size: cover;
 }
 
-.primary-present-container{
+.primary-present-container {
   position: relative;
   width: 20%;
   max-width: 400px;
@@ -157,56 +157,123 @@ body {
   margin-bottom: clamp(30px, 9%, 70px);
   width: clamp(150px, 100%, 380px);
   height: auto;
-  /* background-color: orange; */
 }
-.present-primary{
+.present-primary {
   height: auto;
   /* bottom: 60px; */
-  z-index: 100;
+  z-index: 20;
   background-size: cover;
 }
-.present-primary:hover
-{
+.present-primary:hover {
   cursor: pointer;
 }
 
-/* card section */
+/* CARD SECTION */
 .card-container {
-  position: fixed;
+  position: absolute;
   bottom: 100px;
-  width: 55%;
+  width: 80%;
   height: 80vh;
   margin: auto;
   opacity: 0;
-
 }
-
 .card {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 .card-text-container {
-  position: absolute;
-  z-index: 102;
+  position: relative;
+  z-index: 12;
   padding: 50px 150px;
 }
 h1.card-text::first-letter {
   font-size: 5rem;
   font-family: 'Rye', serif;
-  color: #86244d;
+  color: rgb(112, 16, 38);
 }
 h1.card-text{
   font-family: 'Corben', serif;
   font-weight: normal;
-  color: rgb(42, 63, 101);
+  color: rgb(33, 49, 79);
   text-shadow: 0 0 0;
-
 }
 h2.card-text {
   font-family: 'Corben', serif;
   font-weight: normal;
   color:rgb(42, 63, 101);
+}
+
+/* AOC STUFF */
+.aoc-days {
+  position: relative;
+  width: 90%;
+  height: 50%;
+  margin: auto;
+  bottom: 0px;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  z-index: 13;
+}
+
+@media (min-width: 400px) {
+  .aoc-days ul { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 600px) {
+  .aoc-days ul { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .aoc-days ul { grid-template-columns: repeat(4, 1fr); }
+}
+
+.aoc-days ul {
+  position: inherit;
+  display: grid;
+  grid-gap: 1rem;
+  list-style-type: none;
+  padding: 1rem;
+  top: 0px;
+}
+.aoc-day {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 200px);
+}
+.aoc-days li {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  background-color: rgb(240, 238, 225);
+  border-radius : 9999px;
+  padding: 2rem;
+  box-shadow: -10px 8px 7px rgb(122, 110, 110);
+
+}
+.aoc-days li:hover {
+  cursor: pointer;
+  transform: scale(0.99);
+  box-shadow: none;
+
+  transition: transform 0.2s ease-in-out;
+}
+.aoc-days img {
+  min-height: 120px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+    /* position: relative; */
+  margin: 1rem 0;
+}
+.aoc-days h1 {
+  font-family: 'Corben', serif;
+  font-size : 1.5rem;
+  font-weight: normal;
+  color: rgb(33, 49, 79);
+  text-shadow: 0 0 0px black;
+}
+.aoc-days h1::first-letter {
+  font-size: 3rem;
+  font-family: 'Rye', serif;
+  color: rgb(112, 16, 38);
 }
 
 .left-foreground {
