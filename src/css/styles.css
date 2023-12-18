@@ -1,6 +1,5 @@
-
 body {
-  background-image: url(/BackgroundNight.png);
+  background-image: url(/images/BackgroundNight.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -297,5 +296,3 @@ h1::first-letter {
   font-family: 'Rye', serif;
   color: #bf9d52;
 }
-
-

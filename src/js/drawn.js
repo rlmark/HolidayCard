@@ -158,5 +158,4 @@ primaryPresent.addEventListener("click", function(e) {
     card.reverse();
     resumeAnimations();
   }
-
 });
