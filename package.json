@@ -1,14 +1,14 @@
 {
-  "name": "aocspike",
+  "name": "holiday-card",
   "version": "1.0.0",
-  "description": "spike using three js ",
   "main": "main.js",
   "scripts": {
-    "start": "http-server src"
+    "start": "vite src", 
+    "build": "vite build src", 
+    "preview": "vite preview src"
   },
-  "author": "rlmark",
-  "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "vite": "^4.5.1",
     "@pixi/filter-old-film": "^5.1.1",
     "gsap": "^3.12.2",
     "http-server": "^14.1.1",
@@ -21,8 +21,5 @@
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "three": "^0.158.0"
-  },
-  "devDependencies": {
-    "vite": "^4.5.0"
   }
 }
