@@ -25,44 +25,44 @@ body {
 .cloud {
   position: absolute;
 }
-#moon-1{
-  transform: translate(0, 0) ;
+#moon-1 {
+  transform: translate(0, 0);
   width: 100%;
   height: auto;
 }
 #santa-1 {
-  transform: translate(0, 0) ;
+  transform: translate(0, 0);
   width: 100%;
   height: auto;
 }
-#cloud-1{
+#cloud-1 {
   background-size: cover;
 
   width: auto;
   height: 100%;
 }
-#cloud-2{
+#cloud-2 {
   background-size: cover;
   width: auto;
   height: 100%;
   right: 0px;
 }
-#aoc-heading{
+#aoc-heading {
   bottom: 40vh;
-  left: 10vw
+  left: 10vw;
 }
-#aoc-heading-2{
+#aoc-heading-2 {
   bottom: 20vh;
   right: 10vw;
 }
-#cloud-5{
+#cloud-5 {
   transform: translate(-400px, 800px);
 }
 
 /* sky container section */
 
 .sky-container section {
-  background-color : #401c59;
+  background-color: #401c59;
   height: 500px;
   width: 800px;
   display: block;
@@ -72,7 +72,7 @@ body {
 }
 
 .sky-container p {
-  font-family: 'Corben', serif;
+  font-family: "Corben", serif;
   color: #cae6e4;
   text-align: left;
 }
@@ -87,7 +87,7 @@ body {
 #stars-bottom {
   background-size: cover;
   width: 100%;
-  height : auto;
+  height: auto;
 }
 
 .ground-container {
@@ -115,14 +115,13 @@ body {
   will-change: transform;
 }
 
-
 /* tree styling */
 
 .main-tree {
   width: auto;
   margin: auto;
-  left:-500%;
-  right:-500%;
+  left: -500%;
+  right: -500%;
   background-size: cover;
 }
 .lights {
@@ -133,8 +132,8 @@ body {
 .present {
   width: auto;
   margin: auto;
-  left:-500%;
-  right:-500%;
+  left: -500%;
+  right: -500%;
   background-size: cover;
 }
 
@@ -188,19 +187,19 @@ body {
 }
 h1.card-text::first-letter {
   font-size: 5rem;
-  font-family: 'Rye', serif;
+  font-family: "Rye", serif;
   color: rgb(112, 16, 38);
 }
-h1.card-text{
-  font-family: 'Corben', serif;
+h1.card-text {
+  font-family: "Corben", serif;
   font-weight: normal;
   color: rgb(33, 49, 79);
   text-shadow: 0 0 0;
 }
 h2.card-text {
-  font-family: 'Corben', serif;
+  font-family: "Corben", serif;
   font-weight: normal;
-  color:rgb(42, 63, 101);
+  color: rgb(42, 63, 101);
 }
 
 /* AOC STUFF */
@@ -216,14 +215,20 @@ h2.card-text {
 }
 
 @media (min-width: 400px) {
-  .aoc-days ul { grid-template-columns: repeat(2, 1fr); }
+  .aoc-days ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 600px) {
-  .aoc-days ul { grid-template-columns: repeat(3, 1fr); }
+  .aoc-days ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (min-width: 900px) {
-  .aoc-days ul { grid-template-columns: repeat(4, 1fr); }
+  .aoc-days ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .aoc-days ul {
@@ -242,10 +247,9 @@ h2.card-text {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   background-color: rgb(240, 238, 225);
-  border-radius : 9999px;
+  border-radius: 9999px;
   padding: 2rem;
   box-shadow: -10px 8px 7px rgb(122, 110, 110);
-
 }
 .aoc-days li:hover {
   cursor: pointer;
@@ -259,19 +263,19 @@ h2.card-text {
   width: 100%;
   height: auto;
   overflow: hidden;
-    /* position: relative; */
+  /* position: relative; */
   margin: 1rem 0;
 }
 .aoc-days h1 {
-  font-family: 'Corben', serif;
-  font-size : 1.5rem;
+  font-family: "Corben", serif;
+  font-size: 1.5rem;
   font-weight: normal;
   color: rgb(33, 49, 79);
   text-shadow: 0 0 0px black;
 }
 .aoc-days h1::first-letter {
   font-size: 3rem;
-  font-family: 'Rye', serif;
+  font-family: "Rye", serif;
   color: rgb(112, 16, 38);
 }
 
@@ -287,12 +291,12 @@ h2.card-text {
 h1 {
   color: #cae6e4;
   font-size: 3em;
-  font-family: 'Corben', serif;
+  font-family: "Corben", serif;
   font-weight: normal;
   text-shadow: 0 0 7px black;
 }
 h1::first-letter {
   font-size: 5rem;
-  font-family: 'Rye', serif;
+  font-family: "Rye", serif;
   color: #bf9d52;
 }

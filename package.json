@@ -17,6 +17,7 @@
     "pixi-filters": "^5.2.1",
     "pixi-viewport": "^5.0.2",
     "pixi.js": "^7.3.2",
+    "prettier": "^3.1.1",
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "three": "^0.158.0"
