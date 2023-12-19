@@ -83,7 +83,7 @@ gsap
 
 let verySlow = {
   trigger: ".ground-container",
-  start: "-=1000",
+  start: "-=500",
   end: "bottom bottom",
   normalizeScroll: true,
   ease: "ease-in",
@@ -93,4 +93,4 @@ let verySlow = {
 
 gsap
   .timeline({ scrollTrigger: verySlow })
-  .from(".card-container", { y: innerHeight * 0.85 }, 0.5);
+  .from(".card-container", { y: 10000 }, 0.5);
