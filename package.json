@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "vite src", 
-    "build": "vite build src", 
+    "start": "vite src",
+    "build": "vite build src",
     "preview": "vite preview src"
   },
   "devDependencies": {
