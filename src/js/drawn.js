@@ -58,7 +58,7 @@ gsap
   .from(".right-foreground", { y: innerHeight * 0.2 }, "<")
   .from(".present-back", { y: innerHeight * 0.25 }, 2);
 
-// ~*~*~*~*~*~*~*~ SLOWER SCROLL TIMELINE ~*~*~*~*~*~*~*~
+// ~*~*~*~*~*~*~*~ MAIN TREE TIMELINE ~*~*~*~*~*~*~*~
 
 let slowScroll = {
   trigger: ".ground-container",
@@ -78,6 +78,8 @@ gsap
     { y: innerHeight * 0.8, x: -800 },
   )
   .from(".main-tree", { y: innerHeight * 0.85 }, 0.5);
+
+// ~*~*~*~*~*~*~*~ CARD TIMELINE ~*~*~*~*~*~*~*~
 
 let verySlow = {
   trigger: ".ground-container",
